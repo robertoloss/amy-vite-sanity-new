@@ -1,5 +1,6 @@
 import { PortableText } from "@portabletext/react"
 import { PortableTextComponents } from "@portabletext/react"
+import { Quote} from "@/sanity/sanity-types"
 
 const components : PortableTextComponents = {
   block: {
@@ -8,7 +9,7 @@ const components : PortableTextComponents = {
 }
 
 type Props = {
-	quote: any 
+	quote: Quote 
 	author: string
 }
 

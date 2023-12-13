@@ -2,7 +2,7 @@ import { PortableText } from "@portabletext/react";
 import { components } from "./Hero";
 //import arrowLeft from '@/public/arrow_left.svg'
 import { Link } from "react-router-dom"; 
-import { Preview } from "@/utils/sanity-types";
+import { Preview } from "@/sanity/sanity-types";
 import { urlFor } from "@/utils/sanity-queries";
 
 type Props = {

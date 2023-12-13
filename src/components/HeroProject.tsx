@@ -1,5 +1,6 @@
 import { PortableText, PortableTextComponents } from '@portabletext/react'
 import { components } from './Hero';
+import { Project } from '@/sanity/sanity-types';
 
 const componentsBig : PortableTextComponents = {
   block: {
@@ -7,7 +8,7 @@ const componentsBig : PortableTextComponents = {
   },
 }
 
-export default async function HeroProject({ project } : {project: any}) {
+export default async function HeroProject({ project } : {project: Project}) {
 	
 	const maxWidth = 432
 	
@@ -23,12 +24,12 @@ export default async function HeroProject({ project } : {project: any}) {
 						justifySelf: 'center',
 						alignSelf: 'center'
 					}}>
-						<PortableText components={componentsBig} value={project.description_left} />
+						<PortableText components={componentsBig} value={project.description_left!} />
 					</div>
 					<div style={{
 						maxWidth: `${maxWidth}px`
 					}}>
-						<PortableText components={components} value={project.description_right} />
+						<PortableText components={components} value={project.description_right!} />
 					</div>
 				</div>
 			</div>

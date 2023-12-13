@@ -3,9 +3,10 @@ import { createColumns } from "@/utils/CreateColumns"
 import ThreeColumns from "./ThreeColumns"
 import Quote from "./Quote"
 import PictureSection from "./PictureSection"
+import { Section } from "@/sanity/sanity-types"
 
 type Props = {
-	section: any
+	section: Section
 	sectionNum: number
 }
 

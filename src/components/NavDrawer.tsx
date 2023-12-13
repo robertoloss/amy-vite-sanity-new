@@ -1,5 +1,5 @@
-import { Preview } from "../utils/sanity-types"
 import { IoCloseOutline } from "react-icons/io5";
+import { Preview } from "@/sanity/sanity-types";
 
 
 type Props = {

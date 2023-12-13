@@ -1,4 +1,4 @@
-import { getWebsiteInfo } from "@/sanity/sanity-utils";
+import { getWebsiteInfo } from "@/utils/sanity-queries";
 import { PortableText, PortableTextComponents } from '@portabletext/react'
 
 export const components : PortableTextComponents = {
