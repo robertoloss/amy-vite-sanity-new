@@ -2,8 +2,8 @@ import SectionTop from "./SectionTop"
 import { createColumns } from "@/utils/CreateColumns"
 import ThreeColumns from "./ThreeColumns"
 import Quote from "./Quote"
-import PictureSection from "./PictureSection"
-import { Section } from "@/sanity/sanity-types"
+import PictureSectionComp from "./PictureSection"
+import { PictureSection, Section } from "@/sanity/sanity-types"
 
 type Props = {
 	section: Section
@@ -22,10 +22,10 @@ export default function Section({ section, sectionNum } : Props) {
 
 		{section.three_cols_yesNo && <ThreeColumns columns={columns}/>}
 
-		{section.quote && <Quote quote={section.quote.quote} author={section.quote.author} /> }
+		{section.quote && <Quote quote={section.quote!} author={section.section_title!.at(0)!} /> }
 
-		{section.picture_sections  && section.picture_sections.map((pSection: any, key: number) =>
-			<PictureSection pictureSection={pSection} key={sectionNum*10 + key}/>	
+		{section.picture_sections  && section.picture_sections.map((pSection: PictureSection, key: number) =>
+			<PictureSectionComp pictureSection={pSection} key={sectionNum*10 + key}/>	
 		)} 
 		
 	</>)

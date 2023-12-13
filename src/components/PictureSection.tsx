@@ -1,11 +1,10 @@
-import { Picture, PictureSection } from "../utils/sanity-types"
-
+import { Picture, PictureSection } from "@/sanity/sanity-types"
 
 type Props = {
 	pictureSection : PictureSection
 }
 
-export default function PictureSection({ pictureSection } : Props) {
+export default function PictureSectionComp({ pictureSection } : Props) {
 	
 	const width = pictureSection.extra_wide ? 1000 : 960
 	const bgColor = pictureSection.background_blue ? 'bg-bigpic' : 'bg-background'
