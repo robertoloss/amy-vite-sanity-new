@@ -30,6 +30,8 @@ export default function HeaderBar() {
         setPreviews(data);
     })();
   }, []);
+
+	console.log("Greetings from the header bar!")
 	
 	return (
 		<div className="top-0 sticky z-50 flex flex-col items-center h-20 w-full bg-background"
