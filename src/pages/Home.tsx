@@ -5,7 +5,7 @@ import { Preview } from "@/sanity/sanity-types";
 import Hero from "@/components/Hero";
 
 function Home() {
-	const [previews, setPreviews] = useState<Preview[] | null>(null)
+	const [previews, setPreviews] = useState<{preview: Preview}[] | null>(null)
 	
 	useEffect(() => {
     (async () => {
@@ -13,9 +13,9 @@ function Home() {
         setPreviews(data);
     })();
   }, []);	
-	
+	console.log("previews", previews)
 
-return (
+	return (
 		<div className="flex flex-col relative px-8 pb-20 items-center">
 			<Hero/>
 			{
@@ -23,7 +23,7 @@ return (
 					<div className="flex flex-col gap-y-10">
 					{previews.map(
 						( preview, index )=>
-					<PreviewCard key={index} preview={preview}/>)}
+					<PreviewCard key={index} preview={preview.preview}/>)}
 					</div> 
 			}
 		</div>

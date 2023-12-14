@@ -22,7 +22,7 @@ export default function Hero() {
 		})()
 	},[setWebsite])
 
-	website && console.log("website : ", website[0].title)
+	website && console.log("website : ", website[0])
 
 	
 	return (
