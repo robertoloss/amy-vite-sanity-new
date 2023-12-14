@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 
 
 export default function Root() {
-
+	console.log("Home");
 	return (
 		<>
 			{/*<HeaderBar />*/}
