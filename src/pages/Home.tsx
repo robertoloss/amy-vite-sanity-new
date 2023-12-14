@@ -1,40 +1,29 @@
 import { useState, useEffect } from "react"
-import { createClient } from "@sanity/client";
-import { Project } from "@/sanity/sanity-types";
-
-const client = createClient({
-  apiVersion : "2023-12-10",
-  dataset : "production",
-  projectId : "qyyz7qna",
-  useCdn : false,
-})
+import PreviewCard from "@/components/PreviewCard";
+import { getPreviews } from "@/utils/sanity-queries";
+import { Preview } from "@/sanity/sanity-types";
+import Hero from "@/components/Hero";
 
 function Home() {
-	const [projects, setProjects] = useState<Project[] | null>(null)
+	const [previews, setPreviews] = useState<Preview[] | null>(null)
 	
-	useEffect(()=>{
-		async function getProjects() {
-			const data = await client.fetch(
-				`*[_type == "project"]`
-			)
-			setProjects(data);
-			console.log(data);
-		}
-		getProjects();
-		
-	},[setProjects])	
+	useEffect(() => {
+    (async () => {
+        const data = await getPreviews();
+        setPreviews(data);
+    })();
+  }, []);	
 	
-	if (projects) {
-		console.log("projects : ", projects)
-	}
 
-  return (
-    <>
-			{projects && projects.map(( project, index: number ) => 
-				<h1 key={index}>{project.title}</h1>
-			)}
-    </>
-  )
+return (
+		<div className="flex flex-col relative px-8 pb-20 items-center">
+			<Hero/>
+			{previews && <div className="flex flex-col gap-y-10">{previews.map(( preview: {preview : Preview}, index: number ) =>
+					<PreviewCard key={index} preview={preview.preview}/>
+					)}
+			</div> }
+		</div>
+	)
 }
 
 export default Home

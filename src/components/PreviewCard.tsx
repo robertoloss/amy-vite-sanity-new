@@ -1,5 +1,4 @@
-import { PortableText } from "@portabletext/react";
-import { components } from "./Hero";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
 //import arrowLeft from '@/public/arrow_left.svg'
 import { Link } from "react-router-dom"; 
 import { Preview } from "@/sanity/sanity-types";
@@ -7,6 +6,14 @@ import { Preview } from "@/sanity/sanity-types";
 
 type Props = {
 	preview: Preview 
+}
+const components : PortableTextComponents = {
+  block: {
+    normal: ({children}) => <h1 className="text-lg font-normal leading-6">{children}</h1>,
+  },
+	marks: {
+    em: ({children}) => <p className="text-lg font-normal text-destructive leading-6">{children}</p>,
+	},
 }
 
 export default function PreviewCard({ preview } : Props) {
