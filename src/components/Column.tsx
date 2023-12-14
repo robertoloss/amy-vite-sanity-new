@@ -1,5 +1,5 @@
-import { components } from "./Hero"
-import { PortableText } from "@portabletext/react"
+//import { components } from "./Hero"
+//import { PortableText } from "@portabletext/react"
 import { ColumnType } from "../utils/CreateColumns"
 
 export default function Column({ column } : { column : ColumnType }) {
@@ -9,7 +9,7 @@ export default function Column({ column } : { column : ColumnType }) {
 			{}
 			{column.iconsYes === false && <h1 className="font-normal w-fit text-5xl text-destructive"> { column.figure } </h1>}
 			<h1 className="text-2xl font-semibold">{column.title}</h1>
-			<PortableText components={components} value={column.content}/>
+			{/*<PortableText components={components} value={column.content}/>*/}
 		</div>
 	)
 }
