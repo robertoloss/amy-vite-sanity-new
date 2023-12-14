@@ -1,11 +1,19 @@
 import { components } from "./Hero"
 import { PortableText } from "@portabletext/react"
 import { Section } from "@/sanity/sanity-types"
+import { PortableTextComponents } from "@portabletext/react"
 
 type Props = {
 	section: Section 
 }
-
+const components : PortableTextComponents = {
+  block: {
+    normal: ({children}) => <h1 className="text-lg font-normal leading-6">{children}</h1>,
+  },
+	marks: {
+    em: ({children}) => <p className="text-lg font-normal text-destructive leading-6">{children}</p>,
+	},
+}
 export default function SectionTop({ section } : Props) {
 
 

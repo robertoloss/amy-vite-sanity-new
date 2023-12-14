@@ -1,11 +1,18 @@
 import { PortableText, PortableTextComponents } from '@portabletext/react'
-import { components } from './Hero';
 import { Project } from '@/sanity/sanity-types';
 
 const componentsBig : PortableTextComponents = {
   block: {
     normal: ({children}) => <h1 className="text-2xl font-normal leading-8">{children}</h1>,
   },
+}
+const components : PortableTextComponents = {
+  block: {
+    normal: ({children}) => <h1 className="text-lg font-normal leading-6">{children}</h1>,
+  },
+	marks: {
+    em: ({children}) => <p className="text-lg font-normal text-destructive leading-6">{children}</p>,
+	},
 }
 
 export default async function HeroProject({ project } : {project: Project}) {

@@ -18,10 +18,14 @@ function Home() {
 return (
 		<div className="flex flex-col relative px-8 pb-20 items-center">
 			<Hero/>
-			{previews && <div className="flex flex-col gap-y-10">{previews.map(( preview: {preview : Preview}, index: number ) =>
-					<PreviewCard key={index} preview={preview.preview}/>
-					)}
-			</div> }
+			{
+				previews && 
+					<div className="flex flex-col gap-y-10">
+					{previews.map(
+						( preview, index )=>
+					<PreviewCard key={index} preview={preview}/>)}
+					</div> 
+			}
 		</div>
 	)
 }
