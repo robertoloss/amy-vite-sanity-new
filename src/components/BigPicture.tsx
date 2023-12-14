@@ -1,10 +1,10 @@
 
-type Props = {
-	imgUrl : string
-}
+//type Props = {
+//	imgUrl : string
+//}
 
 
-export default function BigPicture({ imgUrl } : Props ) {
+export default function BigPicture() {
 	
 	return (
 		<div className="flex flex-col w-[calc(100%+64px)] h-fit bg-bigpic py-10 px-4 mx-[-16px]">

@@ -1,4 +1,4 @@
-import { Picture, PictureSection } from "@/sanity/sanity-types"
+import { PictureSection } from "@/sanity/sanity-types"
 
 type Props = {
 	pictureSection : PictureSection
@@ -8,7 +8,7 @@ export default function PictureSectionComp({ pictureSection } : Props) {
 	
 	const width = pictureSection.extra_wide ? 1000 : 960
 	const bgColor = pictureSection.background_blue ? 'bg-bigpic' : 'bg-background'
-	const height = pictureSection.height ? pictureSection.height : 200
+	//const height = pictureSection.height ? pictureSection.height : 200
 
 	//console.log("Height = ", height)
 
@@ -22,15 +22,11 @@ export default function PictureSectionComp({ pictureSection } : Props) {
 		>
 			<div className={`flex flex-col h-full w-full`}>
 				<div className={`flex flex-row justify-between  gap-x-8`}>
-					{pictureSection.pictures.map((picture: Picture , key: number) => {
+					{pictureSection!.pictures!.map(() => {
 						
 
 						return (
-							<div className={ `flex flex-col relative w-full h-max-[1200px] w-max-[2000px]` }
-								key={key}
-								style={{
-									height: `${height}px` 
-								}}>
+							<div>
 							
 							</div>
 						)

@@ -3,7 +3,7 @@ import { components } from "./Hero";
 //import arrowLeft from '@/public/arrow_left.svg'
 import { Link } from "react-router-dom"; 
 import { Preview } from "@/sanity/sanity-types";
-import { urlFor } from "@/utils/sanity-queries";
+//import { urlFor } from "@/utils/sanity-queries";
 
 type Props = {
 	preview: Preview 
@@ -11,7 +11,7 @@ type Props = {
 
 export default function PreviewCard({ preview } : Props) {
 	
-	const imgUrl = preview.picture ? urlFor(preview.picture?.image)?.width(2400)?.url() : "" 
+	//const imgUrl = preview.picture ? urlFor(preview.picture?.image)?.width(2400)?.url() : "" 
 
 	return (<>
 		<div className="flex flex-col md:flex-row relative p-6 border-2 rounded-lg w-full 
