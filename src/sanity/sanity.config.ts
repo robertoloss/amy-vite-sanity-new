@@ -1,7 +1,7 @@
 //import {defineConfig} from 'sanity'
 import { deskTool } from 'sanity/desk'
-import { visionTool } from '@sanity/vision';
 import { defineConfig } from "@sanity-typed/types";
+//import { visionTool } from '@sanity/vision'
 import type { InferSchemaValues } from "@sanity-typed/types";
 import { picture } from './schemas/picture';
 import { picture_section } from './schemas/picture_section';
@@ -19,7 +19,10 @@ const config = defineConfig({
   projectId: 'qyyz7qna',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool()],
+  plugins: [
+		deskTool(), 
+		//visionTool()
+	],
 
   schema: {
     types: [
