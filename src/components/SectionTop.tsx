@@ -1,4 +1,3 @@
-import { components } from "./Hero"
 import { PortableText } from "@portabletext/react"
 import { Section } from "@/sanity/sanity-types"
 import { PortableTextComponents } from "@portabletext/react"
